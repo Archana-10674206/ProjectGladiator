@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbFarmerScheme3ModelStoreContainer" CdmEntityContainer="dbFarmerScheme3Entities">
+    <EntitySetMapping Name="tblBidCrops">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblBidCrop">
+        <MappingFragment StoreEntitySet="tblBidCrops">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="bidId" ColumnName="bidId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="BasePriceAsMSP" ColumnName="BasePriceAsMSP" />
+          <ScalarProperty Name="FinalBidAmount" ColumnName="FinalBidAmount" />
+          <ScalarProperty Name="BidStatus" ColumnName="BidStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBidders">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblBidder">
+        <MappingFragment StoreEntitySet="tblBidder">
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="bUserName" ColumnName="bUserName" />
+          <ScalarProperty Name="bContactNo" ColumnName="bContactNo" />
+          <ScalarProperty Name="bAddress" ColumnName="bAddress" />
+          <ScalarProperty Name="bCity" ColumnName="bCity" />
+          <ScalarProperty Name="bState" ColumnName="bState" />
+          <ScalarProperty Name="bPincode" ColumnName="bPincode" />
+          <ScalarProperty Name="bAccountNo" ColumnName="bAccountNo" />
+          <ScalarProperty Name="bIFSCcode" ColumnName="bIFSCcode" />
+          <ScalarProperty Name="bAadhar" ColumnName="bAadhar" />
+          <ScalarProperty Name="bPan" ColumnName="bPan" />
+          <ScalarProperty Name="bTraderLicense" ColumnName="bTraderLicense" />
+          <ScalarProperty Name="bPassword" ColumnName="bPassword" />
+          <ScalarProperty Name="StatusOfBidderDocx" ColumnName="StatusOfBidderDocx" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="bEmailId" ColumnName="bEmailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBids">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblBid">
+        <MappingFragment StoreEntitySet="tblBids">
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="BidAmount" ColumnName="BidAmount" />
+          <ScalarProperty Name="DateOfBid" ColumnName="DateOfBid" />
+          <ScalarProperty Name="BidStatus" ColumnName="BidStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCropDetails">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblCropDetail">
+        <MappingFragment StoreEntitySet="tblCropDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="MspPerQuintal" ColumnName="MspPerQuintal" />
+          <ScalarProperty Name="ActuarialRatePercentage" ColumnName="ActuarialRatePercentage" />
+          <ScalarProperty Name="YeildPerHectareTons" ColumnName="YeildPerHectareTons" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCropForSales">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblCropForSale">
+        <MappingFragment StoreEntitySet="tblCropForSale">
+          <ScalarProperty Name="DateOfRequestForSell" ColumnName="DateOfRequestForSell" />
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FertilizerType" ColumnName="FertilizerType" />
+          <ScalarProperty Name="SoilPhCertificate" ColumnName="SoilPhCertificate" />
+          <ScalarProperty Name="DateOfSoldCrop" ColumnName="DateOfSoldCrop" />
+          <ScalarProperty Name="MSP" ColumnName="MSP" />
+          <ScalarProperty Name="SoldPrice" ColumnName="SoldPrice" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="StatusOfCropSaleReq" ColumnName="StatusOfCropSaleReq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFarmers">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblFarmer">
+        <MappingFragment StoreEntitySet="tblFarmer">
+          <ScalarProperty Name="fId" ColumnName="fId" />
+          <ScalarProperty Name="fUserName" ColumnName="fUserName" />
+          <ScalarProperty Name="fContactNo" ColumnName="fContactNo" />
+          <ScalarProperty Name="fAddress" ColumnName="fAddress" />
+          <ScalarProperty Name="fCity" ColumnName="fCity" />
+          <ScalarProperty Name="fState" ColumnName="fState" />
+          <ScalarProperty Name="fPincode" ColumnName="fPincode" />
+          <ScalarProperty Name="fLandArea" ColumnName="fLandArea" />
+          <ScalarProperty Name="fLandAddress" ColumnName="fLandAddress" />
+          <ScalarProperty Name="fLandPincode" ColumnName="fLandPincode" />
+          <ScalarProperty Name="fAccountNo" ColumnName="fAccountNo" />
+          <ScalarProperty Name="fIFSCcode" ColumnName="fIFSCcode" />
+          <ScalarProperty Name="fAadhar" ColumnName="fAadhar" />
+          <ScalarProperty Name="fPan" ColumnName="fPan" />
+          <ScalarProperty Name="fCertificate" ColumnName="fCertificate" />
+          <ScalarProperty Name="fPassword" ColumnName="fPassword" />
+          <ScalarProperty Name="StatusOfFarmerDocx" ColumnName="StatusOfFarmerDocx" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="fEmailId" ColumnName="fEmailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInsurances">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblInsurance">
+        <MappingFragment StoreEntitySet="tblInsurance">
+          <ScalarProperty Name="DateofApplication" ColumnName="DateofApplication" />
+          <ScalarProperty Name="SumInsured" ColumnName="SumInsured" />
+          <ScalarProperty Name="InsuranceApplicationId" ColumnName="InsuranceApplicationId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInsuranceClaims">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblInsuranceClaim">
+        <MappingFragment StoreEntitySet="tblInsuranceClaim">
+          <ScalarProperty Name="InsuranceId" ColumnName="InsuranceId" />
+          <ScalarProperty Name="Policyno" ColumnName="Policyno" />
+          <ScalarProperty Name="InsuranceComp" ColumnName="InsuranceComp" />
+          <ScalarProperty Name="InsureeName" ColumnName="InsureeName" />
+          <ScalarProperty Name="SumInsured" ColumnName="SumInsured" />
+          <ScalarProperty Name="DateOfLoss" ColumnName="DateOfLoss" />
+          <ScalarProperty Name="CauseOfLoss" ColumnName="CauseOfLoss" />
+          <ScalarProperty Name="ClaimStatus" ColumnName="ClaimStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="fId" ColumnName="fId" />
+          <ScalarProperty Name="bId" ColumnName="bId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_calculateInsurance" FunctionName="dbFarmerScheme3Model.Store.proc_calculateInsurance" />
+    <FunctionImportMapping FunctionImportName="proc_getdetailsofinsuree" FunctionName="dbFarmerScheme3Model.Store.proc_getdetailsofinsuree">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.proc_getdetailsofinsuree_Result">
+          <ScalarProperty Name="insuranceapplicationid" ColumnName="insuranceapplicationid" />
+          <ScalarProperty Name="farmerid" ColumnName="farmerid" />
+          <ScalarProperty Name="suminsured" ColumnName="suminsured" />
+          <ScalarProperty Name="fusername" ColumnName="fusername" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetCurrentBid" FunctionName="dbFarmerScheme3Model.Store.sp_GetCurrentBid">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_GetCurrentBid_Result">
+          <ScalarProperty Name="croptype" ColumnName="croptype" />
+          <ScalarProperty Name="cropname" ColumnName="cropname" />
+          <ScalarProperty Name="msp" ColumnName="msp" />
+          <ScalarProperty Name="BidAmount" ColumnName="BidAmount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_PreviousBids" FunctionName="dbFarmerScheme3Model.Store.sp_PreviousBids" />
+    <FunctionImportMapping FunctionImportName="spDisplayPending" FunctionName="dbFarmerScheme3Model.Store.spDisplayPending">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.spDisplayPending_Result">
+          <ScalarProperty Name="Croptype" ColumnName="Croptype" />
+          <ScalarProperty Name="cropname" ColumnName="cropname" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="fertilizertype" ColumnName="fertilizertype" />
+          <ScalarProperty Name="dateofrequestforsell" ColumnName="dateofrequestforsell" />
+          <ScalarProperty Name="statusofcropsalereq" ColumnName="statusofcropsalereq" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spDisplaySoldHistory" FunctionName="dbFarmerScheme3Model.Store.spDisplaySoldHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.spDisplaySoldHistory_Result">
+          <ScalarProperty Name="dateofsoldcrop" ColumnName="dateofsoldcrop" />
+          <ScalarProperty Name="cropname" ColumnName="cropname" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="msp" ColumnName="msp" />
+          <ScalarProperty Name="soldprice" ColumnName="soldprice" />
+          <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Place_Request" FunctionName="dbFarmerScheme3Model.Store.sp_Place_Request" />
+    <FunctionImportMapping FunctionImportName="Add_MSPtotblCropforSale" FunctionName="dbFarmerScheme3Model.Store.Add_MSPtotblCropforSale" />
+    <FunctionImportMapping FunctionImportName="proc_checkexpiredateofclaim" FunctionName="dbFarmerScheme3Model.Store.proc_checkexpiredateofclaim" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="dbFarmerScheme3Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_approveBid" FunctionName="dbFarmerScheme3Model.Store.sp_approveBid" />
+    <FunctionImportMapping FunctionImportName="sp_approveBidder" FunctionName="dbFarmerScheme3Model.Store.sp_approveBidder" />
+    <FunctionImportMapping FunctionImportName="sp_approveFarmer" FunctionName="dbFarmerScheme3Model.Store.sp_approveFarmer" />
+    <FunctionImportMapping FunctionImportName="sp_approvesale" FunctionName="dbFarmerScheme3Model.Store.sp_approvesale" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="dbFarmerScheme3Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="dbFarmerScheme3Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_getCropData" FunctionName="dbFarmerScheme3Model.Store.sp_getCropData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getCropData_Result">
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FertilizerType" ColumnName="FertilizerType" />
+          <ScalarProperty Name="SoilPhCertificate" ColumnName="SoilPhCertificate" />
+          <ScalarProperty Name="DateOfRequestForSell" ColumnName="DateOfRequestForSell" />
+          <ScalarProperty Name="MSP" ColumnName="MSP" />
+          <ScalarProperty Name="SoldPrice" ColumnName="SoldPrice" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="StatusOfCropSaleReq" ColumnName="StatusOfCropSaleReq" />
+          <ScalarProperty Name="DateOfSoldCrop" ColumnName="DateOfSoldCrop" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetMAxBidAmount" FunctionName="dbFarmerScheme3Model.Store.sp_GetMAxBidAmount" />
+    <FunctionImportMapping FunctionImportName="sp_getPendingBidders" FunctionName="dbFarmerScheme3Model.Store.sp_getPendingBidders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getPendingBidders_Result">
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="bUserName" ColumnName="bUserName" />
+          <ScalarProperty Name="bContactNo" ColumnName="bContactNo" />
+          <ScalarProperty Name="bAddress" ColumnName="bAddress" />
+          <ScalarProperty Name="bCity" ColumnName="bCity" />
+          <ScalarProperty Name="bState" ColumnName="bState" />
+          <ScalarProperty Name="bPincode" ColumnName="bPincode" />
+          <ScalarProperty Name="bAccountNo" ColumnName="bAccountNo" />
+          <ScalarProperty Name="bIFSCcode" ColumnName="bIFSCcode" />
+          <ScalarProperty Name="bAadhar" ColumnName="bAadhar" />
+          <ScalarProperty Name="bPan" ColumnName="bPan" />
+          <ScalarProperty Name="bTraderLicense" ColumnName="bTraderLicense" />
+          <ScalarProperty Name="bPassword" ColumnName="bPassword" />
+          <ScalarProperty Name="StatusOfBidderDocx" ColumnName="StatusOfBidderDocx" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="bEmailId" ColumnName="bEmailId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getpendingbids" FunctionName="dbFarmerScheme3Model.Store.sp_getpendingbids">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getpendingbids_Result">
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="BidAmount" ColumnName="BidAmount" />
+          <ScalarProperty Name="DateOfBid" ColumnName="DateOfBid" />
+          <ScalarProperty Name="BidStatus" ColumnName="BidStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getPendingFarmers" FunctionName="dbFarmerScheme3Model.Store.sp_getPendingFarmers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getPendingFarmers_Result">
+          <ScalarProperty Name="fId" ColumnName="fId" />
+          <ScalarProperty Name="fUserName" ColumnName="fUserName" />
+          <ScalarProperty Name="fContactNo" ColumnName="fContactNo" />
+          <ScalarProperty Name="fAddress" ColumnName="fAddress" />
+          <ScalarProperty Name="fCity" ColumnName="fCity" />
+          <ScalarProperty Name="fState" ColumnName="fState" />
+          <ScalarProperty Name="fPincode" ColumnName="fPincode" />
+          <ScalarProperty Name="fLandArea" ColumnName="fLandArea" />
+          <ScalarProperty Name="fLandAddress" ColumnName="fLandAddress" />
+          <ScalarProperty Name="fLandPincode" ColumnName="fLandPincode" />
+          <ScalarProperty Name="fAccountNo" ColumnName="fAccountNo" />
+          <ScalarProperty Name="fIFSCcode" ColumnName="fIFSCcode" />
+          <ScalarProperty Name="fAadhar" ColumnName="fAadhar" />
+          <ScalarProperty Name="fPan" ColumnName="fPan" />
+          <ScalarProperty Name="fCertificate" ColumnName="fCertificate" />
+          <ScalarProperty Name="fPassword" ColumnName="fPassword" />
+          <ScalarProperty Name="StatusOfFarmerDocx" ColumnName="StatusOfFarmerDocx" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="fEmailId" ColumnName="fEmailId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getPendingSaleData" FunctionName="dbFarmerScheme3Model.Store.sp_getPendingSaleData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getPendingSaleData_Result">
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FertilizerType" ColumnName="FertilizerType" />
+          <ScalarProperty Name="SoilPhCertificate" ColumnName="SoilPhCertificate" />
+          <ScalarProperty Name="DateOfRequestForSell" ColumnName="DateOfRequestForSell" />
+          <ScalarProperty Name="MSP" ColumnName="MSP" />
+          <ScalarProperty Name="SoldPrice" ColumnName="SoldPrice" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="StatusOfCropSaleReq" ColumnName="StatusOfCropSaleReq" />
+          <ScalarProperty Name="DateOfSoldCrop" ColumnName="DateOfSoldCrop" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="dbFarmerScheme3Model.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="dbFarmerScheme3Model.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_InsertintoBidCrops" FunctionName="dbFarmerScheme3Model.Store.sp_InsertintoBidCrops" />
+    <FunctionImportMapping FunctionImportName="sp_newBid" FunctionName="dbFarmerScheme3Model.Store.sp_newBid" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="dbFarmerScheme3Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateSoldPriceintblCropForSale" FunctionName="dbFarmerScheme3Model.Store.sp_UpdateSoldPriceintblCropForSale" />
+    <FunctionImportMapping FunctionImportName="sp_UpdatetblCropforsale" FunctionName="dbFarmerScheme3Model.Store.sp_UpdatetblCropforsale" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="dbFarmerScheme3Model.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_getClaimData" FunctionName="dbFarmerScheme3Model.Store.sp_getClaimData">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getClaimData_Result">
+          <ScalarProperty Name="InsuranceApplicationId" ColumnName="InsuranceApplicationId" />
+          <ScalarProperty Name="croptype" ColumnName="croptype" />
+          <ScalarProperty Name="cropname" ColumnName="cropname" />
+          <ScalarProperty Name="SumInsured" ColumnName="SumInsured" />
+          <ScalarProperty Name="dateofapplication" ColumnName="dateofapplication" />
+          <ScalarProperty Name="dateofloss" ColumnName="dateofloss" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="causeofloss" ColumnName="causeofloss" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="marketplace" FunctionName="dbFarmerScheme3Model.Store.marketplace">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.marketplace_Result">
+          <ScalarProperty Name="cropid" ColumnName="cropid" />
+          <ScalarProperty Name="cropname" ColumnName="cropname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_lostBids" FunctionName="dbFarmerScheme3Model.Store.sp_lostBids">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_lostBids_Result">
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="BidAmount" ColumnName="BidAmount" />
+          <ScalarProperty Name="DateOfBid" ColumnName="DateOfBid" />
+          <ScalarProperty Name="BidStatus" ColumnName="BidStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_updateClaim" FunctionName="dbFarmerScheme3Model.Store.sp_updateClaim" />
+    <FunctionImportMapping FunctionImportName="sp_validateClaim" FunctionName="dbFarmerScheme3Model.Store.sp_validateClaim" />
+    <FunctionImportMapping FunctionImportName="sp_wonBids" FunctionName="dbFarmerScheme3Model.Store.sp_wonBids">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_wonBids_Result">
+          <ScalarProperty Name="bId" ColumnName="bId" />
+          <ScalarProperty Name="CropId" ColumnName="CropId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="BidAmount" ColumnName="BidAmount" />
+          <ScalarProperty Name="DateOfBid" ColumnName="DateOfBid" />
+          <ScalarProperty Name="BidStatus" ColumnName="BidStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getpendingbids1" FunctionName="dbFarmerScheme3Model.Store.sp_getpendingbids1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getpendingbids1_Result">
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="cropId" ColumnName="cropId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="bidAmount" ColumnName="bidAmount" />
+          <ScalarProperty Name="dateofbid" ColumnName="dateofbid" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getClaimInfo" FunctionName="dbFarmerScheme3Model.Store.sp_getClaimInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbFarmerScheme3Model.sp_getClaimInfo_Result">
+          <ScalarProperty Name="insuranceApplicationId" ColumnName="insuranceApplicationId" />
+          <ScalarProperty Name="farmerid" ColumnName="farmerid" />
+          <ScalarProperty Name="croptype" ColumnName="croptype" />
+          <ScalarProperty Name="cropname" ColumnName="cropname" />
+          <ScalarProperty Name="suminsured" ColumnName="suminsured" />
+          <ScalarProperty Name="dateofapplication" ColumnName="dateofapplication" />
+          <ScalarProperty Name="dateofloss" ColumnName="dateofloss" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="causeofloss" ColumnName="causeofloss" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="dbFarmerScheme3Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetAllCrops" FunctionName="dbFarmerScheme3Model.Store.sp_GetAllCrops" />
+  </EntityContainerMapping>
+</Mapping>

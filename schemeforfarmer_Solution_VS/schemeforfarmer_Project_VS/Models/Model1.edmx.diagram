@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e03e7eb61fe74ac8aa26bc5304beaace" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblBidCrop" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblBidder" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblBid" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblCropDetail" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblCropForSale" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblFarmer" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblInsurance" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblInsuranceClaim" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.tblUser" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_bbb" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_bbbid" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_bbf" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_cbc" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_bb" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_ub" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_cb" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_cc" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_fc" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_fi" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_uf" ManuallyRouted="false" />
+        <AssociationConnector Association="dbFarmerScheme3Model.fk_ii" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbFarmerScheme3Model.sysdiagram" Width="1.5" PointX="3.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbFarmerScheme3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblBidCrops">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bidId" Type="int" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="CropId" Type="int" />
+    <Property Name="BidderId" Type="int" />
+    <Property Name="BasePriceAsMSP" Type="money" />
+    <Property Name="FinalBidAmount" Type="money" />
+    <Property Name="BidStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblBidder">
+    <Key>
+      <PropertyRef Name="bId" />
+    </Key>
+    <Property Name="bId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bUserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bContactNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="bAddress" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="bCity" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="bState" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="bPincode" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="bAccountNo" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="bIFSCcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="bAadhar" Type="nvarchar(max)" />
+    <Property Name="bPan" Type="nvarchar(max)" />
+    <Property Name="bTraderLicense" Type="nvarchar(max)" />
+    <Property Name="bPassword" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StatusOfBidderDocx" Type="varchar" MaxLength="20" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ApprovedDate" Type="date" />
+    <Property Name="bEmailId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblBids">
+    <Key>
+      <PropertyRef Name="bId" />
+    </Key>
+    <Property Name="bId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CropId" Type="int" />
+    <Property Name="BidderId" Type="int" />
+    <Property Name="BidAmount" Type="money" Nullable="false" />
+    <Property Name="DateOfBid" Type="smalldatetime" />
+    <Property Name="BidStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tblCropDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CropId" Type="int" />
+    <Property Name="CropType" Type="varchar" MaxLength="20" />
+    <Property Name="CropName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MspPerQuintal" Type="money" Nullable="false" />
+    <Property Name="ActuarialRatePercentage" Type="float" Nullable="false" />
+    <Property Name="YeildPerHectareTons" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCropForSale">
+    <Key>
+      <PropertyRef Name="CropId" />
+    </Key>
+    <Property Name="CropId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="CropType" Type="varchar" MaxLength="20" />
+    <Property Name="CropName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Quantity" Type="float" Nullable="false" />
+    <Property Name="FertilizerType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SoilPhCertificate" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DateOfRequestForSell" Type="date" />
+    <Property Name="MSP" Type="money" />
+    <Property Name="SoldPrice" Type="money" />
+    <Property Name="TotalPrice" Type="money" />
+    <Property Name="StatusOfCropSaleReq" Type="varchar" MaxLength="20" />
+    <Property Name="DateOfSoldCrop" Type="date" />
+  </EntityType>
+  <EntityType Name="tblFarmer">
+    <Key>
+      <PropertyRef Name="fId" />
+    </Key>
+    <Property Name="fId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fUserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fContactNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="fAddress" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fCity" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="fState" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="fPincode" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="fLandArea" Type="float" Nullable="false" />
+    <Property Name="fLandAddress" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fLandPincode" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="fAccountNo" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="fIFSCcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="fAadhar" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="fPan" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="fCertificate" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="fPassword" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StatusOfFarmerDocx" Type="varchar" MaxLength="20" />
+    <Property Name="ApprovedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ApprovedDate" Type="date" />
+    <Property Name="fEmailId" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblInsurance">
+    <Key>
+      <PropertyRef Name="InsuranceApplicationId" />
+    </Key>
+    <Property Name="InsuranceApplicationId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="CropType" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Year" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CropName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Area" Type="float" Nullable="false" />
+    <Property Name="SumInsured" Type="money" />
+    <Property Name="DateofApplication" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="tblInsuranceClaim">
+    <Key>
+      <PropertyRef Name="InsuranceId" />
+    </Key>
+    <Property Name="InsuranceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Policyno" Type="bigint" />
+    <Property Name="InsuranceComp" Type="varchar" MaxLength="30" />
+    <Property Name="InsureeName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SumInsured" Type="money" Nullable="false" />
+    <Property Name="DateOfLoss" Type="date" Nullable="false" />
+    <Property Name="CauseOfLoss" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ClaimStatus" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="EmailId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserType" Type="varchar" MaxLength="20" />
+    <Property Name="fId" Type="int" />
+    <Property Name="bId" Type="int" />
+  </EntityType>
+  <Association Name="fk_bb">
+    <End Role="tblBidder" Type="Self.tblBidder" Multiplicity="0..1" />
+    <End Role="tblBids" Type="Self.tblBids" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBidder">
+        <PropertyRef Name="bId" />
+      </Principal>
+      <Dependent Role="tblBids">
+        <PropertyRef Name="BidderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_bbb">
+    <End Role="tblBids" Type="Self.tblBids" Multiplicity="0..1" />
+    <End Role="tblBidCrops" Type="Self.tblBidCrops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBids">
+        <PropertyRef Name="bId" />
+      </Principal>
+      <Dependent Role="tblBidCrops">
+        <PropertyRef Name="bidId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_bbbid">
+    <End Role="tblBidder" Type="Self.tblBidder" Multiplicity="0..1" />
+    <End Role="tblBidCrops" Type="Self.tblBidCrops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBidder">
+        <PropertyRef Name="bId" />
+      </Principal>
+      <Dependent Role="tblBidCrops">
+        <PropertyRef Name="BidderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_bbf">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblBidCrops" Type="Self.tblBidCrops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="fId" />
+      </Principal>
+      <Dependent Role="tblBidCrops">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cb">
+    <End Role="tblCropForSale" Type="Self.tblCropForSale" Multiplicity="0..1" />
+    <End Role="tblBids" Type="Self.tblBids" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCropForSale">
+        <PropertyRef Name="CropId" />
+      </Principal>
+      <Dependent Role="tblBids">
+        <PropertyRef Name="CropId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cbc">
+    <End Role="tblCropForSale" Type="Self.tblCropForSale" Multiplicity="0..1" />
+    <End Role="tblBidCrops" Type="Self.tblBidCrops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCropForSale">
+        <PropertyRef Name="CropId" />
+      </Principal>
+      <Dependent Role="tblBidCrops">
+        <PropertyRef Name="CropId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cc">
+    <End Role="tblCropForSale" Type="Self.tblCropForSale" Multiplicity="0..1" />
+    <End Role="tblCropDetails" Type="Self.tblCropDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCropForSale">
+        <PropertyRef Name="CropId" />
+      </Principal>
+      <Dependent Role="tblCropDetails">
+        <PropertyRef Name="CropId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_fc">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblCropForSale" Type="Self.tblCropForSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="fId" />
+      </Principal>
+      <Dependent Role="tblCropForSale">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_fi">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblInsurance" Type="Self.tblInsurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="fId" />
+      </Principal>
+      <Dependent Role="tblInsurance">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ii">
+    <End Role="tblInsurance" Type="Self.tblInsurance" Multiplicity="0..1" />
+    <End Role="tblInsuranceClaim" Type="Self.tblInsuranceClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblInsurance">
+        <PropertyRef Name="InsuranceApplicationId" />
+      </Principal>
+      <Dependent Role="tblInsuranceClaim">
+        <PropertyRef Name="Policyno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ub">
+    <End Role="tblBidder" Type="Self.tblBidder" Multiplicity="0..1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBidder">
+        <PropertyRef Name="bId" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="bId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_uf">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="fId" />
+      </Principal>
+      <Dependent Role="tblUser">
+        <PropertyRef Name="fId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Add_MSPtotblCropforSale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="crpid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="marketplace" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farmerid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="proc_calculateInsurance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="croptype" Type="varchar" Mode="In" />
+    <Parameter Name="cropname" Type="varchar" Mode="In" />
+    <Parameter Name="area" Type="float" Mode="In" />
+    <Parameter Name="sumfinal" Type="float" Mode="InOut" />
+    <Parameter Name="fshare" Type="float" Mode="InOut" />
+    <Parameter Name="gvtshare" Type="float" Mode="InOut" />
+  </Function>
+  <Function Name="proc_checkexpiredateofclaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policy" Type="int" Mode="In" />
+    <Parameter Name="dateofinsuranceapp" Type="date" Mode="In" />
+    <Parameter Name="dateofloss" Type="date" Mode="In" />
+    <Parameter Name="fid" Type="int" Mode="In" />
+    <Parameter Name="croptype" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="proc_getdetailsofinsuree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="appid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_approveBid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bid" Type="int" Mode="In" />
+    <Parameter Name="cropid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_approveBidder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bid" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" />
+    <Parameter Name="adate" Type="date" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_approveFarmer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fid" Type="int" Mode="In" />
+    <Parameter Name="admin" Type="varchar" Mode="In" />
+    <Parameter Name="aDate" Type="date" Mode="In" />
+    <Parameter Name="pass" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_approvesale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cropid" Type="int" Mode="In" />
+    <Parameter Name="cropType" Type="varchar" Mode="In" />
+    <Parameter Name="cropname" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllCrops" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getClaimData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getClaimInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getCropData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetCurrentBid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cropid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetMAxBidAmount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cropid" Type="int" Mode="In" />
+    <Parameter Name="bidderid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getPendingBidders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getpendingbids" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getpendingbids1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getPendingFarmers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getPendingSaleData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertintoBidCrops" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bidId" Type="int" Mode="In" />
+    <Parameter Name="FarmerId" Type="int" Mode="In" />
+    <Parameter Name="CropId" Type="int" Mode="In" />
+    <Parameter Name="BidderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_lostBids" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bidderId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_newBid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cropid" Type="int" Mode="In" />
+    <Parameter Name="bidderid" Type="int" Mode="In" />
+    <Parameter Name="bidamt" Type="money" Mode="In" />
+    <Parameter Name="dateofbid" Type="date" Mode="In" />
+  </Function>
+  <Function Name="sp_Place_Request" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farmerid" Type="int" Mode="In" />
+    <Parameter Name="croptype" Type="varchar" Mode="In" />
+    <Parameter Name="cropname" Type="varchar" Mode="In" />
+    <Parameter Name="quantity" Type="float" Mode="In" />
+    <Parameter Name="FertilizerType" Type="varchar" Mode="In" />
+    <Parameter Name="SoilPhCertificate" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_PreviousBids" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cropid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_updateClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="policy" Type="bigint" Mode="In" />
+    <Parameter Name="flag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateSoldPriceintblCropForSale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="crpid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdatetblCropforsale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="crpid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_validateClaim" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dateofinsuranceapp" Type="date" Mode="In" />
+    <Parameter Name="dateofloss" Type="date" Mode="In" />
+    <Parameter Name="fid" Type="int" Mode="In" />
+    <Parameter Name="croptype" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_wonBids" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="bidderid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spDisplayPending" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farmerid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spDisplaySoldHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="farmerid" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="dbFarmerScheme3ModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBidCrops" EntityType="Self.tblBidCrops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBidder" EntityType="Self.tblBidder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBids" EntityType="Self.tblBids" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCropDetails" EntityType="Self.tblCropDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCropForSale" EntityType="Self.tblCropForSale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFarmer" EntityType="Self.tblFarmer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInsurance" EntityType="Self.tblInsurance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInsuranceClaim" EntityType="Self.tblInsuranceClaim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_bb" Association="Self.fk_bb">
+      <End Role="tblBidder" EntitySet="tblBidder" />
+      <End Role="tblBids" EntitySet="tblBids" />
+    </AssociationSet>
+    <AssociationSet Name="fk_bbb" Association="Self.fk_bbb">
+      <End Role="tblBids" EntitySet="tblBids" />
+      <End Role="tblBidCrops" EntitySet="tblBidCrops" />
+    </AssociationSet>
+    <AssociationSet Name="fk_bbbid" Association="Self.fk_bbbid">
+      <End Role="tblBidder" EntitySet="tblBidder" />
+      <End Role="tblBidCrops" EntitySet="tblBidCrops" />
+    </AssociationSet>
+    <AssociationSet Name="fk_bbf" Association="Self.fk_bbf">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblBidCrops" EntitySet="tblBidCrops" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cb" Association="Self.fk_cb">
+      <End Role="tblCropForSale" EntitySet="tblCropForSale" />
+      <End Role="tblBids" EntitySet="tblBids" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cbc" Association="Self.fk_cbc">
+      <End Role="tblCropForSale" EntitySet="tblCropForSale" />
+      <End Role="tblBidCrops" EntitySet="tblBidCrops" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cc" Association="Self.fk_cc">
+      <End Role="tblCropForSale" EntitySet="tblCropForSale" />
+      <End Role="tblCropDetails" EntitySet="tblCropDetails" />
+    </AssociationSet>
+    <AssociationSet Name="fk_fc" Association="Self.fk_fc">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblCropForSale" EntitySet="tblCropForSale" />
+    </AssociationSet>
+    <AssociationSet Name="fk_fi" Association="Self.fk_fi">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblInsurance" EntitySet="tblInsurance" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ii" Association="Self.fk_ii">
+      <End Role="tblInsurance" EntitySet="tblInsurance" />
+      <End Role="tblInsuranceClaim" EntitySet="tblInsuranceClaim" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ub" Association="Self.fk_ub">
+      <End Role="tblBidder" EntitySet="tblBidder" />
+      <End Role="tblUser" EntitySet="tblUser" />
+    </AssociationSet>
+    <AssociationSet Name="fk_uf" Association="Self.fk_uf">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblUser" EntitySet="tblUser" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
